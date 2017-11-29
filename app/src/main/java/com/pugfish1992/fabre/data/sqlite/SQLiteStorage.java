@@ -13,7 +13,7 @@ import com.pugfish1992.fabre.data.Record;
  * Created by daichi on 11/29/17.
  */
 
-abstract public class SQLiteStorage<T extends Record, U extends Alter<T>> implements BaseColumns {
+abstract public class SQLiteStorage<T extends Record, U extends Alter> implements BaseColumns {
 
     @NonNull private final SQLiteOpenHelper mOpenHelper;
 

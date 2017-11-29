@@ -11,7 +11,7 @@ import java.util.Calendar;
  * Created by daichi on 11/29/17.
  */
 
-public class CommentAlter implements Alter<Comment> {
+public class CommentAlter implements Alter {
 
     private String mNewText;
     private Calendar mNewCreatedAt;
@@ -39,9 +39,9 @@ public class CommentAlter implements Alter<Comment> {
         return this;
     }
 
+    /* Intentional package-private visibility */
     @NonNull
-    @Override
-    public Comment apply(@NonNull Comment source) {
+    Comment apply(@NonNull Comment source) {
         String text = (mSetNewText) ? mNewText : source.text();
 
         ImmCalendar createdAt = (mSetNewCreatedAt)
