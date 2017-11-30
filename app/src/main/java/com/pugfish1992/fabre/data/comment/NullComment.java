@@ -11,12 +11,11 @@ import java.util.Calendar;
  * Created by daichi on 11/29/17.
  */
 
-/* Intentional package-private visibility */
-class NullComment implements Comment {
+public class NullComment implements Comment {
 
     @NonNull private final ImmCalendar mTimeStamp;
 
-    NullComment() {
+    public NullComment() {
         mTimeStamp = ImmCalendar.createImmutableCalendar(Calendar.getInstance());
     }
 
@@ -28,7 +27,7 @@ class NullComment implements Comment {
     @Nullable
     @Override
     public String text() {
-        return "Sorry, failed to load comment data.";
+        return "INVALID COMMENT DATA";
     }
 
     @NonNull
