@@ -1,4 +1,4 @@
-package com.pugfish1992.fabre.util;
+package com.pugfish1992.fabre.component;
 
 import android.support.annotation.NonNull;
 

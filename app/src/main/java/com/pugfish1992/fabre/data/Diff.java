@@ -5,4 +5,4 @@ package com.pugfish1992.fabre.data;
  * This is a marker interface
  */
 
-public interface Alter {}
+public interface Diff {}

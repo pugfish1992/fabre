@@ -3,7 +3,7 @@ package com.pugfish1992.fabre.data.comment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.pugfish1992.fabre.util.ImmCalendar;
+import com.pugfish1992.fabre.component.ImmCalendar;
 
 import java.util.Calendar;
 

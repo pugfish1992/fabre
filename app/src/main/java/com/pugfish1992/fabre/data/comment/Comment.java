@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.pugfish1992.fabre.data.Record;
-import com.pugfish1992.fabre.util.ImmCalendar;
+import com.pugfish1992.fabre.component.ImmCalendar;
 
 /**
  * Created by daichi on 11/29/17.

@@ -6,7 +6,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.support.annotation.NonNull;
 
 import com.pugfish1992.fabre.data.comment.SQLiteComments;
-import com.pugfish1992.fabre.util.SQLiteTableUtils;
 
 /**
  * Created by daichi on 11/29/17.

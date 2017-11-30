@@ -9,7 +9,7 @@ import android.support.annotation.NonNull;
 
 import com.pugfish1992.fabre.data.Record;
 import com.pugfish1992.fabre.data.sqlite.SQLiteStorage;
-import com.pugfish1992.fabre.util.SQLiteTableDef;
+import com.pugfish1992.fabre.data.sqlite.SQLiteTableDef;
 
 import java.util.Calendar;
 
@@ -17,7 +17,7 @@ import java.util.Calendar;
  * Created by daichi on 11/29/17.
  */
 
-public class SQLiteComments extends SQLiteStorage<Comment, CommentAlter> implements Comments {
+public class SQLiteComments extends SQLiteStorage<Comment, CommentDiff> implements Comments {
 
     private static final NullComment NULL_COMMENT = new NullComment();
 
@@ -69,18 +69,18 @@ public class SQLiteComments extends SQLiteStorage<Comment, CommentAlter> impleme
 
     @NonNull
     @Override
-    public Comment alter(@NonNull Comment record, @NonNull CommentAlter alter) {
+    public Comment alter(@NonNull Comment record, @NonNull CommentDiff diff) {
         SQLiteDatabase db = openWritableDatabase();
-        Comment comment = this.alter(record, alter, db);
+        Comment comment = this.alter(record, diff, db);
         db.close();
         return comment;
     }
 
     @NonNull
     @Override
-    public Comment alter(@NonNull Comment record, @NonNull CommentAlter alter, @NonNull SQLiteDatabase db) {
+    public Comment alter(@NonNull Comment record, @NonNull CommentDiff diff, @NonNull SQLiteDatabase db) {
         if (record instanceof NullComment) return record;
-        Comment newComment = alter.apply(record);
+        Comment newComment = diff.apply(record);
         String where = COL_ID + "=" + record.id();
         ContentValues data = packRowData(newComment, true);
         boolean wasSuccessful;

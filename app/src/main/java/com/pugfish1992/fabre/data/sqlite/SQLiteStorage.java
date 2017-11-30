@@ -6,14 +6,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.support.annotation.NonNull;
 
-import com.pugfish1992.fabre.data.Alter;
+import com.pugfish1992.fabre.data.Diff;
 import com.pugfish1992.fabre.data.Record;
 
 /**
  * Created by daichi on 11/29/17.
  */
 
-abstract public class SQLiteStorage<T extends Record, U extends Alter> implements BaseColumns {
+abstract public class SQLiteStorage<T extends Record, U extends Diff> implements BaseColumns {
 
     @NonNull private final SQLiteOpenHelper mOpenHelper;
 
@@ -30,6 +30,6 @@ abstract public class SQLiteStorage<T extends Record, U extends Alter> implement
     }
 
     @NonNull abstract public T load(long id, @NonNull SQLiteDatabase db);
-    @NonNull abstract public T alter(@NonNull T record, @NonNull U alter, @NonNull SQLiteDatabase db);
+    @NonNull abstract public T alter(@NonNull T record, @NonNull U diff, @NonNull SQLiteDatabase db);
     abstract public void delete(@NonNull T record, @NonNull SQLiteDatabase db);
 }

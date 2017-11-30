@@ -2,8 +2,8 @@ package com.pugfish1992.fabre.data.comment;
 
 import android.support.annotation.NonNull;
 
-import com.pugfish1992.fabre.data.Alter;
-import com.pugfish1992.fabre.util.ImmCalendar;
+import com.pugfish1992.fabre.data.Diff;
+import com.pugfish1992.fabre.component.ImmCalendar;
 
 import java.util.Calendar;
 
@@ -11,7 +11,7 @@ import java.util.Calendar;
  * Created by daichi on 11/29/17.
  */
 
-public class CommentAlter implements Alter {
+public class CommentDiff implements Diff {
 
     private String mNewText;
     private Calendar mNewCreatedAt;
@@ -21,19 +21,19 @@ public class CommentAlter implements Alter {
     private boolean mSetNewCreatedAt = false;
     private boolean mSetNewLastModifiedAt = false;
 
-    public CommentAlter newText(String newText) {
+    public CommentDiff newText(String newText) {
         mNewText = newText;
         mSetNewText = true;
         return this;
     }
 
-    public CommentAlter newCreatedAt(@NonNull Calendar newCreatedAt) {
+    public CommentDiff newCreatedAt(@NonNull Calendar newCreatedAt) {
         mNewCreatedAt = newCreatedAt;
         mSetNewCreatedAt = true;
         return this;
     }
 
-    public CommentAlter newLastModifiedAt(@NonNull Calendar newLastModifiedAt) {
+    public CommentDiff newLastModifiedAt(@NonNull Calendar newLastModifiedAt) {
         mNewLastModifiedAt = newLastModifiedAt;
         mSetNewLastModifiedAt = true;
         return this;

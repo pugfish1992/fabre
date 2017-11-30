@@ -5,15 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.pugfish1992.fabre.R;
-import com.pugfish1992.fabre.data.Repository;
-import com.pugfish1992.fabre.data.comment.CommentAlter;
-import com.pugfish1992.fabre.util.SQLiteTableDef;
 
 public class HomeActivity extends AppCompatActivity {
 

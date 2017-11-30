@@ -10,6 +10,6 @@ import java.util.Calendar;
  * Created by daichi on 11/29/17.
  */
 
-public interface Comments extends Storage<Comment, CommentAlter> {
+public interface Comments extends Storage<Comment, CommentDiff> {
     @NonNull Comment insert(String text, @NonNull Calendar createdAt, @NonNull Calendar lastModifiedAt);
 }
